@@ -16,7 +16,7 @@
       theme: { 
         extend: { 
           colors: { 
-            mev: '#1A2E44', /* Azul Marinho Sofisticado */
+            mev: '#1A2E44', 
             accent: '#2C4A6D',
             surface: '#F7F5F3', 
             dark: '#0F172A' 
@@ -28,10 +28,19 @@
   <style>
     body { font-family: 'Outfit', sans-serif; background-color: #F7F5F3; color: #1A1A1A; scroll-behavior: smooth; }
     h1, h2, h3, .font-serif { font-family: 'Cormorant Garamond', serif; }
+    
+    .hero-bg {
+      background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
+                  url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
     .hero-pattern {
-      background-image: linear-gradient(135deg, rgba(26,46,68,0.03) 25%, transparent 25%), 
-                        linear-gradient(225deg, rgba(26,46,68,0.03) 25%, transparent 25%);
-      background-size: 80px 80px;
+      background-image: linear-gradient(135deg, rgba(255,255,255,0.05) 25%, transparent 25%), 
+                        linear-gradient(225deg, rgba(255,255,255,0.05) 25%, transparent 25%);
+      background-size: 60px 60px;
     }
   </style>
 </head>
@@ -53,17 +62,24 @@
     </div>
   </nav>
 
-  <section id="inicio" class="min-h-screen hero-pattern flex items-center px-8 pt-20">
-    <div class="max-w-7xl mx-auto w-full text-center md:text-left">
+  <section id="inicio" class="min-h-screen hero-bg flex items-center px-8 pt-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto w-full text-center md:text-left relative z-10">
       <div class="max-w-4xl">
-        <h1 class="text-6xl md:text-8xl font-light leading-tight mb-8 text-dark">Espaços que inspiram e <br><span class="italic text-mev">transformam</span></h1>
-        <p class="text-xl text-gray-500 font-light max-w-xl mb-12 leading-relaxed">Arquitetura de detalhe com o rigor técnico do executivo e a sensibilidade da neuroarquitetura.</p>
+        <p class="text-white font-bold tracking-[0.4em] uppercase text-xs mb-6 opacity-80">Arquitetura de Alto Padrão</p>
+        <h1 class="text-5xl md:text-8xl font-light leading-tight mb-8 text-white">
+          Onde o rigor técnico <br>
+          <span class="italic text-surface font-serif">encontra o bem-estar.</span>
+        </h1>
+        <p class="text-xl text-zinc-300 font-light max-w-2xl mb-12 leading-relaxed border-l border-white/30 pl-6">
+          Projetos executivos de precisão e neuroarquitetura aplicada para transformar ambientes em experiências sensoriais exclusivas.
+        </p>
         <div class="flex flex-wrap justify-center md:justify-start gap-6">
-          <a href="#projetos" class="bg-mev text-white px-12 py-4 text-xs tracking-[0.2em] uppercase hover:bg-dark transition-all">Ver Portfólio</a>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQL4oJzbFKYROWjTzck9V-SLJTfs3Vvw5OFElMxQRAZRGJQg/viewform" target="_blank" class="border border-mev text-mev px-12 py-4 text-xs tracking-[0.2em] uppercase hover:bg-mev hover:text-white transition-all">Solicitar Orçamento</a>
+          <a href="#projetos" class="bg-white text-dark px-12 py-4 text-xs tracking-[0.2em] uppercase font-bold hover:bg-mev hover:text-white transition-all shadow-2xl">Explorar Portfólio</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQL4oJzbFKYROWjTzck9V-SLJTfs3Vvw5OFElMxQRAZRGJQg/viewform" target="_blank" class="border border-white text-white px-12 py-4 text-xs tracking-[0.2em] uppercase hover:bg-white hover:text-dark transition-all backdrop-blur-sm">Solicitar Consultoria</a>
         </div>
       </div>
     </div>
+    <div class="absolute inset-0 opacity-10 pointer-events-none hero-pattern"></div>
   </section>
 
   <section id="servicos" class="py-32 bg-white px-8">
@@ -136,7 +152,7 @@
         <div class="bg-dark p-12 text-white flex flex-col justify-center">
           <h3 class="text-3xl font-serif italic mb-6">Ficha Técnica de Obra</h3>
           <p class="text-zinc-400 mb-8 text-sm leading-relaxed">
-            Para agilizar sua cotação técnica, clique no botão abaixo. Os dados alimentam diretamente nossa planilha de custos.
+            Clique abaixo para preencher o formulário técnico. Seus dados serão integrados diretamente ao nosso sistema de orçamentos.
           </p>
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQL4oJzbFKYROWjTzck9V-SLJTfs3Vvw5OFElMxQRAZRGJQg/viewform" target="_blank" class="text-center bg-white text-dark px-8 py-5 text-xs tracking-[0.2em] uppercase font-bold hover:bg-mev hover:text-white transition-all">
             Iniciar Orçamento
@@ -165,7 +181,7 @@
           <div class="group cursor-pointer">
             <a href="Projetos/${p.pasta}/capa.jpg" data-fancybox="gal-${idx}">
               <div class="aspect-[3/4] bg-zinc-200 mb-6 overflow-hidden">
-                <img src="Projetos/${p.pasta}/capa.jpg" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/600x800?text=${p.nome}'">
+                <img src="Projetos/${p.pasta}/capa.jpg" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-105">
               </div>
             </a>
             <h3 class="text-xl font-serif italic">${p.nome}</h3>
