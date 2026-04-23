@@ -13,15 +13,24 @@
   
   <script>
     tailwind.config = {
-      theme: { extend: { colors: { mev: '#6B1C2A', surface: '#F7F5F3', dark: '#1A1A1A' } } }
+      theme: { 
+        extend: { 
+          colors: { 
+            mev: '#1A2E44', /* Azul Marinho Sofisticado */
+            accent: '#2C4A6D',
+            surface: '#F7F5F3', 
+            dark: '#0F172A' 
+          } 
+        } 
+      }
     }
   </script>
   <style>
     body { font-family: 'Outfit', sans-serif; background-color: #F7F5F3; color: #1A1A1A; scroll-behavior: smooth; }
     h1, h2, h3, .font-serif { font-family: 'Cormorant Garamond', serif; }
     .hero-pattern {
-      background-image: linear-gradient(135deg, rgba(107,28,42,0.03) 25%, transparent 25%), 
-                        linear-gradient(225deg, rgba(107,28,42,0.03) 25%, transparent 25%);
+      background-image: linear-gradient(135deg, rgba(26,46,68,0.03) 25%, transparent 25%), 
+                        linear-gradient(225deg, rgba(26,46,68,0.03) 25%, transparent 25%);
       background-size: 80px 80px;
     }
   </style>
@@ -38,6 +47,7 @@
         <a href="#inicio" class="hover:text-mev transition-colors">Início</a>
         <a href="#servicos" class="hover:text-mev transition-colors">Expertise</a>
         <a href="#projetos" class="hover:text-mev transition-colors">Portfólio</a>
+        <a href="#contato" class="hover:text-mev transition-colors">Contato</a>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQL4oJzbFKYROWjTzck9V-SLJTfs3Vvw5OFElMxQRAZRGJQg/viewform" target="_blank" class="text-mev border border-mev px-4 py-2 hover:bg-mev hover:text-white transition-all tracking-[0.2em]">Orçamento</a>
       </div>
     </div>
@@ -46,10 +56,10 @@
   <section id="inicio" class="min-h-screen hero-pattern flex items-center px-8 pt-20">
     <div class="max-w-7xl mx-auto w-full text-center md:text-left">
       <div class="max-w-4xl">
-        <h1 class="text-6xl md:text-8xl font-light leading-tight mb-8">Espaços que inspiram e <br><span class="italic text-mev">transformam</span></h1>
+        <h1 class="text-6xl md:text-8xl font-light leading-tight mb-8 text-dark">Espaços que inspiram e <br><span class="italic text-mev">transformam</span></h1>
         <p class="text-xl text-gray-500 font-light max-w-xl mb-12 leading-relaxed">Arquitetura de detalhe com o rigor técnico do executivo e a sensibilidade da neuroarquitetura.</p>
         <div class="flex flex-wrap justify-center md:justify-start gap-6">
-          <a href="#projetos" class="bg-mev text-white px-12 py-4 text-xs tracking-[0.2em] uppercase hover:bg-black transition-all">Ver Portfólio</a>
+          <a href="#projetos" class="bg-mev text-white px-12 py-4 text-xs tracking-[0.2em] uppercase hover:bg-dark transition-all">Ver Portfólio</a>
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQL4oJzbFKYROWjTzck9V-SLJTfs3Vvw5OFElMxQRAZRGJQg/viewform" target="_blank" class="border border-mev text-mev px-12 py-4 text-xs tracking-[0.2em] uppercase hover:bg-mev hover:text-white transition-all">Solicitar Orçamento</a>
         </div>
       </div>
@@ -60,22 +70,22 @@
     <div class="max-w-7xl mx-auto">
       <h2 class="text-4xl md:text-5xl font-light mb-20 border-l-4 border-mev pl-6 italic">O Que Fazemos</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-        <div class="space-y-4 p-6 bg-surface">
+        <div class="space-y-4 p-8 bg-surface border-b-2 border-transparent hover:border-mev transition-all">
           <i data-lucide="layout" class="text-mev w-8 h-8"></i>
           <h3 class="text-2xl font-serif">Projetos Técnicos</h3>
           <p class="text-gray-500 text-sm font-light">Especialistas em detalhamento executivo residencial e comercial.</p>
         </div>
-        <div class="space-y-4 p-6 bg-surface">
+        <div class="space-y-4 p-8 bg-surface border-b-2 border-transparent hover:border-mev transition-all">
           <i data-lucide="hard-hat" class="text-mev w-8 h-8"></i>
           <h3 class="text-2xl font-serif">Execução de Obra</h3>
           <p class="text-gray-500 text-sm font-light">Gestão total de obra, infraestrutura civil e acompanhamento especializado.</p>
         </div>
-        <div class="space-y-4 p-6 bg-surface">
+        <div class="space-y-4 p-8 bg-surface border-b-2 border-transparent hover:border-mev transition-all">
           <i data-lucide="brush" class="text-mev w-8 h-8"></i>
           <h3 class="text-2xl font-serif">Acabamentos</h3>
           <p class="text-gray-500 text-sm font-light">Pintura técnica e assentamento de porcelanato de grandes formatos.</p>
         </div>
-        <div class="space-y-4 p-6 bg-surface">
+        <div class="space-y-4 p-8 bg-surface border-b-2 border-transparent hover:border-mev transition-all">
           <i data-lucide="users" class="text-mev w-8 h-8"></i>
           <h3 class="text-2xl font-serif">Consultoria</h3>
           <p class="text-gray-500 text-sm font-light">Parcerias estratégicas para execução fiel ao projeto e orçamento.</p>
@@ -84,9 +94,9 @@
     </div>
   </section>
 
-  <section id="projetos" class="py-32 bg-surface px-8">
-    <div class="max-w-7xl mx-auto text-center">
-      <h2 class="text-5xl font-light mb-16 font-serif italic">Projetos Mev Studio</h2>
+  <section id="projetos" class="py-32 bg-surface px-8 text-center">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-5xl font-light mb-16 font-serif italic text-dark">Projetos Mev Studio</h2>
       <div id="grid-projetos" class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left"></div>
       <div id="sem-projetos" class="py-20 border-2 border-dashed border-gray-300 rounded-lg">
         <p class="text-gray-400 italic font-serif text-xl">Novos projetos serão adicionados em breve.</p>
@@ -94,22 +104,53 @@
     </div>
   </section>
 
-  <section id="orcamento" class="py-32 bg-dark text-white px-8 text-center">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-5xl font-light mb-8 font-serif italic text-white">Solicitar Cotação Técnica</h2>
-      <p class="text-gray-400 mb-12">Preencha o formulário para integrar os detalhes da sua obra com nossa planilha de gestão.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQL4oJzbFKYROWjTzck9V-SLJTfs3Vvw5OFElMxQRAZRGJQg/viewform" target="_blank" class="inline-block bg-mev text-white px-12 py-5 text-xs tracking-[0.3em] uppercase hover:bg-white hover:text-mev transition-all border border-mev">
-        Acessar Formulário
-      </a>
+  <section id="contato" class="py-32 bg-white px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-20">
+        <div>
+          <h2 class="text-5xl font-light mb-8 font-serif italic text-dark">Vamos conversar?</h2>
+          <div class="space-y-10">
+            <div class="flex items-center gap-5">
+              <div class="w-14 h-14 bg-mev text-white flex items-center justify-center rounded-full">
+                <i data-lucide="user" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <p class="text-[10px] uppercase tracking-[0.2em] text-mev font-bold">Responsável Técnico</p>
+                <p class="text-xl font-serif">Victor Reis</p>
+                <a href="https://wa.me/5511996061944" target="_blank" class="text-sm text-gray-500 hover:text-mev transition-colors">(11) 99606-1944</a>
+              </div>
+            </div>
+            <div class="flex items-center gap-5">
+              <div class="w-14 h-14 bg-mev text-white flex items-center justify-center rounded-full">
+                <i data-lucide="badge-check" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <p class="text-[10px] uppercase tracking-[0.2em] text-mev font-bold">Gestão Comercial</p>
+                <p class="text-xl font-serif">Artur Andrade</p>
+                <a href="https://wa.me/5511964277870" target="_blank" class="text-sm text-gray-500 hover:text-mev transition-colors">(11) 96427-7870</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-dark p-12 text-white flex flex-col justify-center">
+          <h3 class="text-3xl font-serif italic mb-6">Ficha Técnica de Obra</h3>
+          <p class="text-zinc-400 mb-8 text-sm leading-relaxed">
+            Para agilizar sua cotação técnica, clique no botão abaixo. Os dados alimentam diretamente nossa planilha de custos.
+          </p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQL4oJzbFKYROWjTzck9V-SLJTfs3Vvw5OFElMxQRAZRGJQg/viewform" target="_blank" class="text-center bg-white text-dark px-8 py-5 text-xs tracking-[0.2em] uppercase font-bold hover:bg-mev hover:text-white transition-all">
+            Iniciar Orçamento
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer class="py-12 bg-white text-center border-t border-gray-100">
-    <p class="text-[10px] tracking-[0.4em] text-gray-400 uppercase">Mev Studio © 2026</p>
+  <footer class="py-12 bg-dark text-center">
+    <p class="text-[10px] tracking-[0.4em] text-zinc-500 uppercase">Mev Studio © 2026 | Arquitetura & Execução</p>
   </footer>
 
   <script>
-    // LISTA DE PROJETOS VAZIA (Conforme sua solicitação)
     const listaDeProjetos = []; 
 
     const grid = document.getElementById('grid-projetos');
@@ -124,7 +165,7 @@
           <div class="group cursor-pointer">
             <a href="Projetos/${p.pasta}/capa.jpg" data-fancybox="gal-${idx}">
               <div class="aspect-[3/4] bg-zinc-200 mb-6 overflow-hidden">
-                <img src="Projetos/${p.pasta}/capa.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                <img src="Projetos/${p.pasta}/capa.jpg" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/600x800?text=${p.nome}'">
               </div>
             </a>
             <h3 class="text-xl font-serif italic">${p.nome}</h3>
