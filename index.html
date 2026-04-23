@@ -35,6 +35,15 @@
       background-position: center;
       background-attachment: fixed;
     }
+
+    /* Estilo do Modal */
+    #modal-contato {
+      display: none;
+      backdrop-filter: blur(8px);
+    }
+    #modal-contato.active {
+      display: flex;
+    }
   </style>
 </head>
 <body class="h-full">
@@ -68,14 +77,47 @@
         </p>
         <div class="flex flex-wrap justify-center md:justify-start gap-6">
           <a href="#projetos" class="bg-white text-dark px-12 py-4 text-xs tracking-[0.2em] uppercase font-bold hover:bg-mev hover:text-white transition-all shadow-2xl">Explorar Portfólio</a>
-          <a href="#contato" class="border border-white text-white px-12 py-4 text-xs tracking-[0.2em] uppercase hover:bg-white hover:text-dark transition-all backdrop-blur-sm">Solicitar Consultoria</a>
+          <button onclick="toggleModal()" class="border border-white text-white px-12 py-4 text-xs tracking-[0.2em] uppercase hover:bg-white hover:text-dark transition-all backdrop-blur-sm">
+            Solicitar Consultoria
+          </button>
         </div>
       </div>
     </div>
   </section>
 
+  <div id="modal-contato" class="fixed inset-0 z-[100] bg-dark/90 items-center justify-center p-6 animate-in fade-in duration-300">
+    <div class="bg-surface w-full max-w-4xl p-8 md:p-16 relative">
+      <button onclick="toggleModal()" class="absolute top-6 right-6 text-dark hover:text-mev transition-colors">
+        <i data-lucide="x" class="w-8 h-8"></i>
+      </button>
+      
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-serif italic text-dark mb-4">Consultoria Mev Studio</h2>
+        <p class="text-gray-500 uppercase tracking-widest text-[10px]">Escolha um especialista para iniciar</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <a href="https://wa.me/5511964277870?text=Olá Artur! Vi o site do Mev Studio e gostaria de solicitar uma consultoria." target="_blank" class="group bg-white p-8 border border-gray-100 hover:bg-mev transition-all duration-500 text-center">
+          <div class="w-16 h-16 bg-mev text-white group-hover:bg-white group-hover:text-mev flex items-center justify-center rounded-full mx-auto mb-6 transition-colors">
+            <i data-lucide="badge-check" class="w-8 h-8"></i>
+          </div>
+          <p class="text-[10px] uppercase tracking-widest text-mev group-hover:text-white/70 font-bold mb-2">Gestão Comercial</p>
+          <h3 class="text-2xl font-serif group-hover:text-white">Artur Andrade</h3>
+        </a>
+
+        <a href="https://wa.me/5511996061944?text=Olá Victor! Vi o site do Mev Studio e gostaria de tirar dúvidas técnicas." target="_blank" class="group bg-white p-8 border border-gray-100 hover:bg-mev transition-all duration-500 text-center">
+          <div class="w-16 h-16 bg-mev text-white group-hover:bg-white group-hover:text-mev flex items-center justify-center rounded-full mx-auto mb-6 transition-colors">
+            <i data-lucide="user" class="w-8 h-8"></i>
+          </div>
+          <p class="text-[10px] uppercase tracking-widest text-mev group-hover:text-white/70 font-bold mb-2">Responsável Técnico</p>
+          <h3 class="text-2xl font-serif group-hover:text-white">Victor Reis</h3>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <section id="servicos" class="py-32 bg-white px-8">
-    <div class="max-w-7xl mx-auto">
+    <div class="max-w-7xl mx-auto text-center md:text-left">
       <h2 class="text-4xl md:text-5xl font-light mb-20 border-l-4 border-mev pl-6 italic">O Que Fazemos</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
         <div class="space-y-4 p-8 bg-surface border-b-2 border-transparent hover:border-mev transition-all">
@@ -113,39 +155,38 @@
   </section>
 
   <section id="contato" class="py-32 bg-white px-8 border-t border-gray-100">
-    <div class="max-w-7xl mx-auto text-center mb-16">
-      <h2 class="text-5xl font-light font-serif italic text-dark mb-4">Consultoria Especializada</h2>
-      <p class="text-gray-500">Escolha um de nossos especialistas para iniciar seu atendimento via WhatsApp</p>
-    </div>
-
-    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
-      <a href="https://wa.me/5511964277870?text=Olá Artur! Vi o site do Mev Studio e gostaria de solicitar uma consultoria." 
-         target="_blank" 
-         class="group bg-surface p-10 text-center hover:bg-mev transition-all duration-500 rounded-sm shadow-sm hover:shadow-xl">
-        <div class="w-20 h-20 bg-mev group-hover:bg-white text-white group-hover:text-mev flex items-center justify-center rounded-full mx-auto mb-6 transition-colors">
-          <i data-lucide="badge-check" class="w-10 h-10"></i>
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-20">
+        <div>
+          <h2 class="text-5xl font-light mb-8 font-serif italic text-dark">Canais de Contato</h2>
+          <div class="space-y-10">
+            <div class="flex items-center gap-5">
+              <div class="w-14 h-14 bg-mev text-white flex items-center justify-center rounded-full">
+                <i data-lucide="user" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <p class="text-[10px] uppercase tracking-widest text-mev font-bold">Victor Reis</p>
+                <a href="https://wa.me/5511996061944" target="_blank" class="text-sm text-gray-500 hover:text-mev transition-colors">(11) 99606-1944</a>
+              </div>
+            </div>
+            <div class="flex items-center gap-5">
+              <div class="w-14 h-14 bg-mev text-white flex items-center justify-center rounded-full">
+                <i data-lucide="badge-check" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <p class="text-[10px] uppercase tracking-widest text-mev font-bold">Artur Andrade</p>
+                <a href="https://wa.me/5511964277870" target="_blank" class="text-sm text-gray-500 hover:text-mev transition-colors">(11) 96427-7870</a>
+              </div>
+            </div>
+          </div>
         </div>
-        <p class="text-[10px] uppercase tracking-[0.2em] text-mev group-hover:text-white/80 font-bold mb-2">Gestão Comercial</p>
-        <h3 class="text-3xl font-serif group-hover:text-white transition-colors">Artur Andrade</h3>
-        <p class="mt-4 text-sm text-gray-400 group-hover:text-white/60">Clique para falar no WhatsApp</p>
-      </a>
-
-      <a href="https://wa.me/5511996061944?text=Olá Victor! Vi o site do Mev Studio e gostaria de tirar dúvidas técnicas." 
-         target="_blank" 
-         class="group bg-surface p-10 text-center hover:bg-mev transition-all duration-500 rounded-sm shadow-sm hover:shadow-xl">
-        <div class="w-20 h-20 bg-mev group-hover:bg-white text-white group-hover:text-mev flex items-center justify-center rounded-full mx-auto mb-6 transition-colors">
-          <i data-lucide="user" class="w-10 h-10"></i>
+        
+        <div class="bg-dark p-12 text-white flex flex-col justify-center">
+          <h3 class="text-3xl font-serif italic mb-6">Orçamento Técnico</h3>
+          <p class="text-zinc-400 mb-8 text-sm leading-relaxed">Integre seus dados diretamente à nossa gestão comercial preenchendo a ficha técnica.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQL4oJzbFKYROWjTzck9V-SLJTfs3Vvw5OFElMxQRAZRGJQg/viewform" target="_blank" class="text-center bg-white text-dark px-8 py-5 text-xs tracking-widest uppercase font-bold hover:bg-mev hover:text-white transition-all">Iniciar Ficha</a>
         </div>
-        <p class="text-[10px] uppercase tracking-[0.2em] text-mev group-hover:text-white/80 font-bold mb-2">Responsável Técnico</p>
-        <h3 class="text-3xl font-serif group-hover:text-white transition-colors">Victor Reis</h3>
-        <p class="mt-4 text-sm text-gray-400 group-hover:text-white/60">Clique para falar no WhatsApp</p>
-      </a>
-    </div>
-
-    <div class="max-w-2xl mx-auto mt-20 p-8 bg-dark text-white text-center">
-        <h3 class="text-2xl font-serif italic mb-4">Precisa de um orçamento detalhado?</h3>
-        <p class="text-zinc-400 mb-6 text-sm">Se você já tem o projeto ou medidas, preencha nossa ficha técnica oficial.</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQL4oJzbFKYROWjTzck9V-SLJTfs3Vvw5OFElMxQRAZRGJQg/viewform" target="_blank" class="inline-block bg-white text-dark px-8 py-3 text-xs tracking-[0.2em] uppercase font-bold hover:bg-mev hover:text-white transition-all">Acessar Ficha Técnica</a>
+      </div>
     </div>
   </section>
 
@@ -154,6 +195,12 @@
   </footer>
 
   <script>
+    // Função para abrir/fechar o Modal
+    function toggleModal() {
+      const modal = document.getElementById('modal-contato');
+      modal.classList.toggle('active');
+    }
+
     const listaDeProjetos = []; 
     const grid = document.getElementById('grid-projetos');
     const empty = document.getElementById('sem-projetos');
